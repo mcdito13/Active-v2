@@ -1,0 +1,33 @@
+extends layout
+
+block content
+
+    .container
+        h1 Welcome back, #{name}
+
+        // Recent activities list
+        .col-md-6.m-b-md
+            .list-group
+                h4.list-group-header
+                    | Recent Activities
+                a.list-group-item(href='#')
+                    span.pull-right.text-muted 3,929,481
+                    |               / (Logged out)
+
+            a.btn.btn-primary-outline(class="crudButton") View all
+            a.btn.btn-success-outline(class="crudButton") Add
+            a.btn.btn-danger-outline(class="crudButton") Remove
+
+
+        // Goals list
+        .col-md-6.m-b-md
+            .list-group
+                h4.list-group-header
+                    | Goals
+                a.list-group-item(href='#')
+                    span.pull-right.text-muted 3,929,481
+                    |               Desktop (1920x1080)
+
+            a.btn.btn-primary-outline(href='#', class="crudButton") View all
+            a.btn.btn-success-outline(href='#', class="crudButton") Add
+            a.btn.btn-danger-outline(href='#', class="crudButton") Remove

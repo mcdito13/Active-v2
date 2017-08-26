@@ -1,0 +1,47 @@
+extends layout
+
+block content
+    //h1=title
+    //p Welcome to #{title}
+
+    nav.navbar.navbar-light.navbar-fixed-top
+      .container-fluid.container-fluid-spacious
+        .navbar-header
+          a.navbar-brand.navbar-brand-emphasized(href='#', id="activeTop")
+            span.icon.icon-leaf.navbar-brand-icon(class="navItem")
+            | Active
+        #navbar
+          ul.nav.navbar-nav(class="navItem")
+            li
+              a(href='#') Home
+            li(class="navItem")
+              a(href='#') About
+          form.form-inline.navbar-form.navbar-right
+            input.form-control(class="logInText", type='text', name="logInEmail", placeholder='Email')
+            input.form-control(class="logInText",type="password", name="logInPassword", placeholder="Password")
+            button.btn.btn-primary(id="logInButtom", type='submit', name="logInButton") Log In
+
+
+    #jumbotron.jumbotron
+      h1.display-3(class="white") Active
+      p.lead(class="white") Track your exercise activities and goals #gains
+      p(class="white") Join below!
+
+
+    form(id="signUpForm")
+      input.form-control(class="signUpInput", type="text", name="firstName", placeholder="First Name")
+      br
+      input.form-control(class="signUpInput", type="text", name="lastName", placeholder="Last Name")
+      br
+      input.form-control(class="signUpInput", type="email", name="signUpEmail", placeholder="Your Email")
+      br
+      input.form-control(class="signUpInput", type="password", name="signUpPassword", placeholder="Password")
+      br
+      input.form-control(class="signUpInput", type="password", name="signUpConfirmPassword", placeholder="Confirm Password")
+      br
+      button.btn.btn-primary(id="signUpSubmit", type="submit", name="signUpSubmit") Sign Up
+
+
+    p(id="activeBottom") Active Inc. 2017
+
+

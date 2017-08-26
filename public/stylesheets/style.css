@@ -1,0 +1,64 @@
+body {
+
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+}
+
+a {
+
+  color: #00B7FF;
+
+}
+
+.jumbotron {
+
+  background-image: url("/images/surfing.jpg");
+  text-align: center;
+  background-size: cover;
+  height: 700px;
+}
+
+.white {
+
+  color: white !important;
+
+}
+
+nav.navbar.navbar-light.navbar-fixed-top {
+
+  background-color: white;
+  position: static;
+  text-align: center;
+  margin-bottom: -1px;
+
+}
+
+input.form-control.logInText{
+
+  margin-right: 5px;
+
+}
+
+input.form-control.signUpInput {
+
+  text-align: center;
+  display: list-item;
+  margin: auto;
+  width: 275px !important;
+
+}
+
+#signUpSubmit {
+
+  text-align: center;
+  display: list-item;
+  margin: auto;
+
+}
+
+.crudButton {
+
+  margin-right: 3px;
+
+}
