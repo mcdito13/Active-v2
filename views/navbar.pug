@@ -1,0 +1,23 @@
+extends layout
+
+block content
+
+    nav.navbar.navbar-light.navbar-fixed-top
+        .container-fluid
+            .navbar-header
+                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand.navbar-brand-emphasized(href='../index.html')
+                    span.icon.icon-cloud.navbar-brand-icon
+                    |           Active
+            #navbar.navbar-collapse.collapse
+                ul.nav.navbar-nav
+                    li.active
+                        a(href='#') Home
+                    li
+                        a(href='#') About
+
+        block more_content

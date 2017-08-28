@@ -1,47 +1,39 @@
-extends layout
+extends navbar
 
-block content
-    //h1=title
-    //p Welcome to #{title}
+block more_content
 
-    nav.navbar.navbar-light.navbar-fixed-top
-      .container-fluid.container-fluid-spacious
-        .navbar-header
-          a.navbar-brand.navbar-brand-emphasized(href='#', id="activeTop")
-            span.icon.icon-leaf.navbar-brand-icon(class="navItem")
-            | Active
-        #navbar
-          ul.nav.navbar-nav(class="navItem")
-            li
-              a(href='#') Home
-            li(class="navItem")
-              a(href='#') About
-          form.form-inline.navbar-form.navbar-right
-            input.form-control(class="logInText", type='text', name="logInEmail", placeholder='Email')
-            input.form-control(class="logInText",type="password", name="logInPassword", placeholder="Password")
-            button.btn.btn-primary(id="logInButtom", type='submit', name="logInButton") Log In
+    #carousel-example-generic.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+            li.active(data-target='#carousel-example-generic', data-slide-to='0')
+            li(data-target='#carousel-example-generic', data-slide-to='1')
+            li(data-target='#carousel-example-generic', data-slide-to='2')
+        .carousel-inner(role='listbox')
+            .item.active
+                img(src='/images/surfing.jpg', alt='Second slide')
+        a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+        a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next
 
+    .container(id='signUpLogInForm')
+        form
+            .form-group
+                label.sr-only(for='exampleInputName2') Name
+                input#emailInput.form-control(type='email', placeholder='Your Email')
+            .form-group
+                label.sr-only(for='exampleInputEmail2') Email
+                input#passwordInput.form-control(type='password', placeholder='Password')
+                button.btn.btn-default(type='button', class='signUpLogInButtons') Log In
+                button.btn.btn-primary(type='button', class='signUpLogInButtons') Sign Up
 
-    #jumbotron.jumbotron
-      h1.display-3(class="white") Active
-      p.lead(class="white") Track your exercise activities and goals #gains
-      p(class="white") Join below!
-
-
-    form(id="signUpForm")
-      input.form-control(class="signUpInput", type="text", name="firstName", placeholder="First Name")
-      br
-      input.form-control(class="signUpInput", type="text", name="lastName", placeholder="Last Name")
-      br
-      input.form-control(class="signUpInput", type="email", name="signUpEmail", placeholder="Your Email")
-      br
-      input.form-control(class="signUpInput", type="password", name="signUpPassword", placeholder="Password")
-      br
-      input.form-control(class="signUpInput", type="password", name="signUpConfirmPassword", placeholder="Confirm Password")
-      br
-      button.btn.btn-primary(id="signUpSubmit", type="submit", name="signUpSubmit") Sign Up
+        p(id='copyright') Active 2017 &copy;
 
 
-    p(id="activeBottom") Active Inc. 2017
 
 
+
+    // Include jQuery (required) and the JS
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='scripts/toolkit.min.js')

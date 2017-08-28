@@ -1,64 +1,55 @@
-body {
+button.navbar-toggle {
 
-  padding: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: #137499;
+    border-width: 4px;
+}
+
+button.navbar-toggle:hover {
+
+    background-color: #e3f5fb;
 
 }
 
-a {
+#activeTop {
 
-  color: #00B7FF;
-
-}
-
-.jumbotron {
-
-  background-image: url("/images/surfing.jpg");
-  text-align: center;
-  background-size: cover;
-  height: 700px;
-}
-
-.white {
-
-  color: white !important;
+    font-size: 14px;
 
 }
 
-nav.navbar.navbar-light.navbar-fixed-top {
+.icon-bar {
 
-  background-color: white;
-  position: static;
-  text-align: center;
-  margin-bottom: -1px;
+    background-color: white;
 
 }
 
-input.form-control.logInText{
 
-  margin-right: 5px;
+#signUpLogInForm {
 
-}
-
-input.form-control.signUpInput {
-
-  text-align: center;
-  display: list-item;
-  margin: auto;
-  width: 275px !important;
+    margin-top: 40px;
+    width: 200px;
 
 }
 
-#signUpSubmit {
+.signUpLogInButtons {
 
-  text-align: center;
-  display: list-item;
-  margin: auto;
+    margin-top: 20px;
+    width: 170px;
 
 }
 
-.crudButton {
+#copyright {
 
-  margin-right: 3px;
+    position: fixed;
+    bottom:0;
+    left: 50%;
+    margin-top: 100px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+
+}
+
+a.btn {
+
+    margin-right: 5px;
 
 }
