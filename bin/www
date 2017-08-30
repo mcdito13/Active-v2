@@ -15,11 +15,6 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '5000');
 app.set('port', port);
 
-
-app.listen(process.env.PORT, '0.0.0.0', function(err) {
-    console.log("Started listening on %s", app.url);
-});
-
 /**
  * Create HTTP server.
  */
