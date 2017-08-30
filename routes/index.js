@@ -4,7 +4,7 @@ var router = express.Router();
 var pg = require('pg');
 pg.defaults.ssl = true;
 
-var DB_URL = 'postgres://cgocavixzphxyc:7f4d866a006cd43983c945d8f70090fb3fc2e13351c4df3567d236f0ba0ed5af@ec2-54-83-48-188.compute-1.amazonaws.com:5432/df5vlfg2ldn3e';
+var DB_URL = 'postgres://wqxbnvwfvwxrof:15bc84d34935b111e1bd25d1954189b9c0fb83c613a8123c107f26dd76bc724d@ec2-184-72-230-93.compute-1.amazonaws.com:5432/ddjdhei0lrfaq4';
 
 // GET home page
 router.get('/', function(req, res, next) {
