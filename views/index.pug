@@ -17,23 +17,27 @@ block more_content
             span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
             span.sr-only Next
 
-    .container(id='signUpLogInForm')
-        form
+    .container(id='logInForm')
+
+        if(locals.successful)
+            .alert.alert-success(class='loginAlerts') Log In Successful!
+        if(locals.unsuccessful)
+            .alert.alert-danger(class='loginAlerts') Log In Failed.
+
+        form(action='/users/view' method='get')
             .form-group
-                label.sr-only(for='exampleInputName2') Name
-                input#emailInput.form-control(type='email', placeholder='Your Email')
+                label.sr-only email
+                input.form-control(type='email', name='email', placeholder='Your Email')
             .form-group
-                label.sr-only(for='exampleInputEmail2') Email
-                input#passwordInput.form-control(type='password', placeholder='Password')
-                button.btn.btn-default(type='button', class='signUpLogInButtons') Log In
-                button.btn.btn-primary(type='button', class='signUpLogInButtons') Sign Up
+                label.sr-only password
+                input.form-control(type='password', name='password', placeholder='Password')
+                button.btn.btn-default(type='submit', class='signUpLogInButtons') Log In
 
-        p(id='copyright') Active 2017 &copy;
-
-
+        form(action='signup' method='get')
+            button.btn.btn-primary(type='submit', class='signUpLogInButtons', id='signUpFromHome') Sign Up
 
 
 
     // Include jQuery (required) and the JS
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-    script(src='scripts/toolkit.min.js')
+    script(src='/scripts/toolkit.min.js')

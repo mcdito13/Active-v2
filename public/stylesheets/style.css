@@ -1,3 +1,10 @@
+#indexAllContent {
+
+    position: relative;
+    display: inline-block;
+
+}
+
 button.navbar-toggle {
 
     background-color: #137499;
@@ -23,7 +30,15 @@ button.navbar-toggle:hover {
 }
 
 
-#signUpLogInForm {
+#logInForm {
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 200px;
+
+}
+
+#signUpForm {
 
     margin-top: 40px;
     width: 200px;
@@ -37,19 +52,22 @@ button.navbar-toggle:hover {
 
 }
 
-#copyright {
+#signUpFromHome {
 
-    position: fixed;
-    bottom:0;
-    left: 50%;
-    margin-top: 100px;
-    text-align: center;
-    transform: translate(-50%, -50%);
+    margin-top:0px;
 
 }
+
 
 a.btn {
 
     margin-right: 5px;
+
+}
+
+.loginAlerts {
+
+    text-align: center;
+    width:170px;
 
 }

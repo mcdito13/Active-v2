@@ -5,10 +5,8 @@ var client = new pg.Client(DATABASE_URL);
 client.connect();
 pg.defaults.ssl = true;
 
-// test model function will get from db
-exports.checkIfUserExists = function(params, callback) {
-    var query = "SELECT * FROM user_table WHERE email = lower('"+params.email+"') AND password = crypt('"+params.password+"', password);";
-    console.log(params.email + ' ' + params.password);
+exports.getByEmail = function(params, callback) {
+    var query = "SELECT g.name FROM goals_table g JOIN activity_table a ON a.id = g.activity_id JOIN user_table u ON u.email = '"+params.email+"';";
     console.log(query);
     client.query(query, function(err, result) {
         callback(err, result);

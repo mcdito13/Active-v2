@@ -4,18 +4,15 @@ block more_content
     .container
         p Welcome back. We hope you've been staying active and meeting your goals.
 
-        p #{result}
-
         .col-md-6.m-b-md
             .list-group
                 h4.list-group-header
                     | Recent Activity
-                a.list-group-item(href='#')
-                    span.pull-right.text-muted mm/dd/yyyy
-                    |           Run
-                a.list-group-item(href='#')
-                    span.pull-right.text-muted mm/dd/yyyy
-                    |           Hike
+
+                for val in activity_result
+                    a.list-group-item(href='#')= val.name
+                        span.pull-right.text-muted= val.date_done
+
 
             a.btn.btn-primary-outline(href='#') View All
             a.btn.btn-success-outline(href='#') Add
@@ -25,14 +22,13 @@ block more_content
             .list-group
                 h4.list-group-header
                     | Goals
-                a.list-group-item(href='#')
-                    span.pull-right.text-muted mm/dd/yyyy
-                    |           5 mile run
-                a.list-group-item(href='#')
-                    span.pull-right.text-muted mm/dd/yyyy
-                    |           3 hour hike
+                for val in goal_result
+                    a.list-group-item(href='#')= val.name
 
             a.btn.btn-primary-outline(href='#') View All
             a.btn.btn-success-outline(href='#') Add
 
 
+    // Include jQuery (required) and the JS
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+    script(src='scripts/toolkit.min.js')
