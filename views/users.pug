@@ -15,7 +15,7 @@ block more_content
 
 
             a.btn.btn-primary-outline(href='#') View All
-            a.btn.btn-success-outline(href='#') Add
+            a.btn.btn-success-outline(data-toggle='modal', data-target='#addActivityModal') Add
 
 
         .col-md-6.m-b-md
@@ -29,6 +29,6 @@ block more_content
             a.btn.btn-success-outline(href='#') Add
 
 
-    // Include jQuery (required) and the JS
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
-    script(src='scripts/toolkit.min.js')
+        // Include jQuery (required) and the JS
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+        script(src='/scripts/toolkit.min.js')
