@@ -6,7 +6,23 @@ client.connect();
 pg.defaults.ssl = true;
 
 exports.getByEmail = function(params, callback) {
-    var query = "SELECT g.name FROM goals_table g JOIN activity_table a ON a.id = g.activity_id JOIN user_table u ON u.email = '"+params.email+"';";
+    var query = "SELECT g.name, a.name as a_name, g.id FROM goals_table g JOIN activity_table a ON a.id = g.activity_id JOIN user_table u ON u.email = '"+params.email+"';";
+    console.log(query);
+    client.query(query, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.insert = function(params, callback) {
+    var query = "INSERT INTO goals_table (user_id, name, activity_id) VALUES ('"+params.userId+"','"+params.goalName+"', '"+params.activityId+"');";
+    console.log(query);
+    client.query(query, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.delete = function(params, callback) {
+    var query = "DELETE FROM goals_table WHERE id = '"+params.goalToDelete+"';";
     console.log(query);
     client.query(query, function(err, result) {
         callback(err, result);

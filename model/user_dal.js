@@ -14,3 +14,12 @@ exports.checkIfUserExists = function(params, callback) {
         callback(err, result);
     });
 };
+
+exports.getUserById = function(params, callback) {
+    var query = "SELECT * FROM user_table WHERE id = '"+params.userId+"';";
+    console.log(params.userId);
+    console.log(query);
+    client.query(query, function(err, result) {
+        callback(err, result);
+    });
+};

@@ -1,21 +1,20 @@
-extends navbar
+include navbar
 
-block more_content
-    .container(id='signUpForm')
-        form(action='users/insert' method='get')
-            .form-group
-                label.sr-only First Name
-                input.form-control(type='text', id='firstName', placeholder='First Name')
-            .form-group
-                label.sr-only Last Name
-                input.form-control(type='text', id='lastName', placeholder='Last Name')
-            .form-group
-                label.sr-only Email
-                input.form-control(type='email', id='email', placeholder='Email')
-            .form-group
-                label.sr-only Password
-                input.form-control(type='password', id='password', placeholder='Password')
-                button.btn.btn-default(type='button', class='signUpLogInButtons') Sign Up
+.container(id='signUpForm')
+    form(action='users/insert' method='get')
+        .form-group
+            label.sr-only First Name
+            input.form-control(type='text', id='firstName', placeholder='First Name')
+        .form-group
+            label.sr-only Last Name
+            input.form-control(type='text', id='lastName', placeholder='Last Name')
+        .form-group
+            label.sr-only Email
+            input.form-control(type='email', id='email', placeholder='Email')
+        .form-group
+            label.sr-only Password
+            input.form-control(type='password', id='password', placeholder='Password')
+            button.btn.btn-default(type='button', class='signUpLogInButtons') Sign Up
 
     // Include jQuery (required) and the JS
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')

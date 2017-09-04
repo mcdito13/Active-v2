@@ -2,8 +2,8 @@
   "name": "active",
   "version": "0.0.0",
   "private": true,
-  "engines": {
-    "node": "8.4.0"
+  "scripts": {
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -14,18 +14,5 @@
     "pg": "^6.4.2",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2"
-  },
-  "main": "app.js",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mcdito13/ActiveHeroku.git"
-  },
-  "author": "michael dito",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mcdito13/ActiveHeroku/issues"
-  },
-  "homepage": "https://github.com/mcdito13/ActiveHeroku#readme",
-  "description": ""
+  }
 }

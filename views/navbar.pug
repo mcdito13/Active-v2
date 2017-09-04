@@ -11,13 +11,11 @@ block content
                     span.icon-bar
                     span.icon-bar
                 a.navbar-brand.navbar-brand-emphasized(href='/')
-                    span.icon.icon-cloud.navbar-brand-icon(href='/')
+                    span.icon.icon-cloud.navbar-brand-icon(href='/', class='navItem')
                     |           Active
             #navbar.navbar-collapse.collapse
                 ul.nav.navbar-nav
                     li.active
-                        a(href='/') Home
+                        a(href='/', class='navItem') Home
                     li
-                        a(href='/about') About
-
-        block more_content
+                        a(href='/about', class='navItem') About

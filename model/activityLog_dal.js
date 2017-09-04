@@ -6,7 +6,31 @@ client.connect();
 pg.defaults.ssl = true;
 
 exports.getByEmail = function(params, callback) {
-    var query = "SELECT a.name, al.date_done FROM activity_log_table al JOIN activity_table a ON a.id = al.id JOIN user_table u ON u.email = '"+params.email+"';";
+    var query = "SELECT a.name, al.date_done, al.id FROM activity_log_table al JOIN activity_table a ON a.id = al.activity_id JOIN user_table u ON u.email = '"+params.email+"';";
+    console.log(query);
+    client.query(query, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.insert = function(params, callback) {
+    var query = "INSERT INTO activity_log_table (user_id, activity_id, date_done, details) VALUES ('"+params.userId+"', '"+params.activityId+"', '"+params.dateDone+"', '"+params.activityDetails+"');";
+    console.log(query);
+    client.query(query, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.edit = function(params, callback) {
+    var query = "UPDATE activity_log_table (user_id, activity_id, date_done, details) VALUES ('"+params.userId+"', '"+params.activityId+"', '"+params.dateDone+"', '"+params.activityDetails+"');";
+    console.log(query);
+    client.query(query, function(err, result) {
+        callback(err, result);
+    });
+};
+
+exports.delete = function(params, callback) {
+    var query = "DELETE FROM activity_log_table WHERE id = '"+params.activityLogToDelete+"';";
     console.log(query);
     client.query(query, function(err, result) {
         callback(err, result);

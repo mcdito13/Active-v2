@@ -3,7 +3,7 @@ var router = express.Router();
 var activityLog_dal = require('../model/activityLog_dal');
 var goals_dal = require('../model/goals_dal');
 var user_dal = require('../model/user_dal');
-
+var activity_dal = require('../model/activity_dal');
 
 /*
 // GET users listing.
@@ -12,15 +12,18 @@ router.get('/', function(req, res, next) {
     res.render('users', { name: 'Name' });
 });
  */
-
 // GET users listing.
 router.get('/', function(req, res) {
-    activityLog_dal.getByEmail(function(err, result) {
+    console.log('user info: ');
+    console.log(req.query);
+    activityLog_dal.getByEmail(req.query, function(err, result) {
+        console.log('User activities:');
         console.log(result);
         if(err) {
             res.send(err);
         } else {
-            goals_dal.getByEmail(function(err,result) {
+            goals_dal.getByEmail(req.query, function(err,result) {
+                console.log('User goals:');
                 console.log(result);
                 if(err) {
                     res.send(err);
@@ -37,28 +40,55 @@ router.get('/', function(req, res) {
 
 
 router.get('/view', function(req, res) {
-    user_dal.checkIfUserExists(req.query, function(err, result) {
-        console.log(result);
-        if(err) {
+    // First check to see if the user exists
+    user_dal.checkIfUserExists(req.query, function (err, user_info_result) {
+        console.log('Checking if user exists...');
+        console.log(user_info_result.rows);
+        if (err) {
             res.send(err);
         } else {
-            if(result.rowCount == 0) {
-                console.log("user does not exist or email/password incorrect");
-                res.render('index', { unsuccessful: true });
+            // they do not exist, stop
+            if (user_info_result.rowCount === 0) {
+                console.log("User does not exist or email/password incorrect");
+                res.render('index', {unsuccessful: true});
             } else {
-                activityLog_dal.getByEmail(req.query, function(err, activity_result) {
-                    console.log(activity_result);
-                    if(err) {
+                // they do exist, get their activities
+                activityLog_dal.getByEmail(req.query, function (err, user_activity_result) {
+                    console.log("User activity:");
+                    console.log(user_activity_result.rows);
+                    if (err) {
                         res.send(err);
                     } else {
-                        goals_dal.getByEmail(req.query, function(err,goal_result) {
-                            console.log(result);
-                            if(err) {
+                        // now get their goals
+                        goals_dal.getByEmail(req.query, function (err, goal_result) {
+                            console.log('User Goals:');
+                            console.log(goal_result);
+                            if (err) {
                                 res.send(err);
                             } else {
-                                res.render('users', {
-                                    'activity_result': activity_result.rows,
-                                    'goal_result': goal_result.rows
+                                // now get all types of activities in-case they want to log one
+                                activity_dal.getWeights(function (err, weights_list) {
+                                    console.log('all weights list...');
+                                    console.log(weights_list.rows);
+                                    if (err) {
+                                        res.send(err);
+                                    } else {
+                                        activity_dal.getCardio(function (err, cardio_list) {
+                                            console.log('all cardio list...');
+                                            console.log(cardio_list.rows);
+                                            if (err) {
+                                                res.send(err);
+                                            } else {
+                                                res.render('users', {
+                                                    'user_info_result': user_info_result.rows,
+                                                    'user_activity_result': user_activity_result.rows,
+                                                    'goal_result': goal_result.rows,
+                                                    'weights_list': weights_list.rows,
+                                                    'cardio_list': cardio_list.rows
+                                                });
+                                            }
+                                        });
+                                    }
                                 });
                             }
                         });
@@ -66,8 +96,9 @@ router.get('/view', function(req, res) {
                 });
             }
         }
-    })
+    });
 });
+
 
 
 

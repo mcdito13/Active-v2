@@ -10,18 +10,21 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var signup = require('./routes/signup');
 var about = require('./routes/about');
+var activityLog = require('./routes/activityLog');
+var goals = require('./routes/goals');
 
 // express app
 var app = express();
 
-app.set('port', (process.env.PORT || 5000));
+// postgresql database
+var pg = require('pg');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -33,6 +36,9 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/signup', signup);
 app.use('/about', about);
+app.use('/activityLog', activityLog);
+app.use('/goals', goals);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -50,21 +56,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-
-app.listen(app.get('port'), function() {
-    console.log('Node app is running on port', app.get('port'));
-});
-
-// postgresql database test
-var pg = require('pg');
-pg.defaults.ssl = true;
-var DB_URL = 'postgres://wqxbnvwfvwxrof:15bc84d34935b111e1bd25d1954189b9c0fb83c613a8123c107f26dd76bc724d@ec2-184-72-230-93.compute-1.amazonaws.com:5432/ddjdhei0lrfaq4';
-
-pg.connect(DB_URL, function(err, client) {
-    if (err) throw err;
-    console.log('Connected to postgres!');
 });
 
 module.exports = app;

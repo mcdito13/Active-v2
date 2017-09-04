@@ -1,40 +1,46 @@
-extends navbar
+include navbar
 
-block more_content
+#carousel-example-generic.carousel.slide(data-ride='carousel')
+    ol.carousel-indicators
+        li.active(data-target='#carousel-example-generic', data-slide-to='0')
+        li(data-target='#carousel-example-generic', data-slide-to='1')
+        li(data-target='#carousel-example-generic', data-slide-to='2')
+        li(data-target='#carousel-example-generic', data-slide-to='3')
 
-    #carousel-example-generic.carousel.slide(data-ride='carousel')
-        ol.carousel-indicators
-            li.active(data-target='#carousel-example-generic', data-slide-to='0')
-            li(data-target='#carousel-example-generic', data-slide-to='1')
-            li(data-target='#carousel-example-generic', data-slide-to='2')
-        .carousel-inner(role='listbox')
-            .item.active
-                img(src='/images/surfing.jpg', alt='Second slide')
-        a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
-            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
-            span.sr-only Previous
-        a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
-            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
-            span.sr-only Next
+    .carousel-inner(role='listbox')
+        .item.active
+            img(src='/images/surfing.jpg', alt='First slide')
+        .item
+            img(src='/images/weights.jpeg', alt='Second slide')
+        .item
+            img(src='/images/tennis.jpeg', alt='Third slide')
+        .item
+            img(src='/images/cycling.jpeg', alt='Fourth slide')
+    a.left.carousel-control(href='#carousel-example-generwic', role='button', data-slide='prev')
+        span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+        span.sr-only Previous
+    a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+        span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+        span.sr-only Next
 
-    .container(id='logInForm')
+.container(id='logInForm')
 
-        if(locals.successful)
-            .alert.alert-success(class='loginAlerts') Log In Successful!
-        if(locals.unsuccessful)
-            .alert.alert-danger(class='loginAlerts') Log In Failed.
+    if(locals.successful)
+        .alert.alert-success(class='loginAlerts') Log In Successful!
+    if(locals.unsuccessful)
+        .alert.alert-danger(class='loginAlerts') Log In Failed.
 
-        form(action='/users/view' method='get')
-            .form-group
-                label.sr-only email
-                input.form-control(type='email', name='email', placeholder='Your Email')
-            .form-group
-                label.sr-only password
-                input.form-control(type='password', name='password', placeholder='Password')
-                button.btn.btn-default(type='submit', class='signUpLogInButtons') Log In
+    form(action='/users/view' method='get')
+        .form-group
+            label.sr-only email
+            input.form-control(type='email', name='email', placeholder='Your Email')
+        .form-group
+            label.sr-only password
+            input.form-control(type='password', name='password', placeholder='Password')
+            button.btn.btn-default(type='submit', class='signUpLogInButtons') Log In
 
-        form(action='signup' method='get')
-            button.btn.btn-primary(type='submit', class='signUpLogInButtons', id='signUpFromHome') Sign Up
+    form(action='signup' method='get')
+        button.btn.btn-primary(type='submit', class='signUpLogInButtons', id='signUpFromHome') Sign Up
 
 
 

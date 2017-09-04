@@ -1,14 +1,39 @@
-#indexAllContent {
-
-    position: relative;
-    display: inline-block;
-
-}
 
 button.navbar-toggle {
 
     background-color: #137499;
     border-width: 4px;
+}
+
+nav {
+
+    text-align: center;
+    position: fixed;
+    float: left;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    list-style-type: none;
+    background-color: #FFFFFF;
+    z-index:999;
+
+}
+
+#carousel-example-generic {
+    margin-top: 60px;
+    position:relative;
+
+}
+
+#aboutContainer {
+    margin-top: 60px;
+    position:relative;
+}
+
+#usersProfileContainer {
+    margin-top: 60px;
+    position:relative;
 }
 
 button.navbar-toggle:hover {
@@ -17,18 +42,19 @@ button.navbar-toggle:hover {
 
 }
 
+
 #activeTop {
 
     font-size: 14px;
 
 }
 
+
 .icon-bar {
 
     background-color: white;
 
 }
-
 
 #logInForm {
 
@@ -40,7 +66,7 @@ button.navbar-toggle:hover {
 
 #signUpForm {
 
-    margin-top: 40px;
+    margin-top: 60px;
     width: 200px;
 
 }
@@ -69,5 +95,65 @@ a.btn {
 
     text-align: center;
     width:170px;
+
+}
+
+.modal-backdrop {
+
+    z-index: -1;
+
+}
+
+.modal {
+
+    top: 50px;
+
+}
+
+#datePicker {
+
+    width: 200px;
+    border-radius: 3px;
+
+}
+
+#goalName {
+
+    width: 200px;
+    border-radius: 3px;
+
+}
+
+.addFormItem {
+
+    position:relative;
+    float: left;
+    clear:left;
+    margin:10px;
+
+}
+
+#activityDetails {
+
+    width:300px;
+    height:100px;
+
+}
+
+#user_table_data {
+
+    height:55px;
+
+}
+
+.editDeleteButtons {
+
+    margin-left: 5px;
+
+}
+
+#deleteForm {
+
+    display:inline;
 
 }
