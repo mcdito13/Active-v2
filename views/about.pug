@@ -1,7 +1,38 @@
 include navbar
 
 .container(id='aboutContainer')
-    | About page
+    h1 Active helps you, help you.
+
+    p
+        |Active helps you keep track of all of your fitness activities and goals, no matter where you are.
+
+    p
+        |With it's mobile-first, responsive design, you can log your activities and goals anywhere, on any device.
+
+    p
+        |It's simple, minimalist, intuitive design makes it an ideal application for people of all ages.
+
+
+    img(src='images/demo1.png', id='demoImage1')
+    img(src='images/demo2.png', id='demoImage2')
+
+    h1 What's going on behind the scenes?
+
+    p
+        |Active is hosted on the Heroku Cloud Platform, powered by Node.js, and uses Pug, a high-performance template engine to create it's HTML files.
+
+    p
+        |It is styled with Bootstrap, and dash of custom CSS. Together, they bring it's minimal design to life.
+
+    p
+        |Your data is stored in a Postgresql database, allowing for speedy retrievals upon your request.
+        |The password that you use is encrypted before it's entered into the database, making it safe from hackers.
+
+    #pictures
+        img(src='/images/heroku.jpeg', id='herokuImage')
+        img(src='/images/node.png', id='nodeImage')
+        img(src='/images/pug.jpeg', id='pugImage')
+        img(src='/images/postgresql.png', id='postgresqlImage')
 
 
     // Include jQuery (required) and the JS

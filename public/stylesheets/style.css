@@ -124,6 +124,12 @@ a.btn {
 
 }
 
+.addActivityButton {
+
+    margin-left: 5px !important;
+
+}
+
 .addFormItem {
 
     position:relative;
@@ -133,7 +139,7 @@ a.btn {
 
 }
 
-#activityDetails {
+.activityDetails {
 
     width:300px;
     height:100px;
@@ -141,6 +147,19 @@ a.btn {
 }
 
 #user_table_data {
+
+    height:55px;
+
+}
+
+
+.list-group-item {
+
+    font-size: 20px;
+
+}
+
+.list-group-header {
 
     height:55px;
 
@@ -155,5 +174,68 @@ a.btn {
 #deleteForm {
 
     display:inline;
+
+}
+
+#aboutContainer {
+
+    width:70%;
+    left:-30px;
+
+}
+
+#demoImage1 {
+
+    left:-3px;
+
+}
+
+#demoImage2 {
+
+    top:-10px;
+    left:-3px;
+
+}
+
+#herokuImage {
+
+    position:relative;
+    margin-right: 10px;
+    height: 100px;
+    width: 200px;
+
+}
+
+#nodeImage {
+
+    position:relative;
+    margin-right: 10px;
+    height:100px;
+    width:200px;
+
+}
+
+#pugImage {
+
+    position:relative;
+    margin-right: 10px;
+    height:100px;
+    width:100px;
+
+}
+
+#postgresqlImage {
+
+    position:relative;
+    margin-right: 10px;
+    height:100px;
+    width:100px;
+
+}
+
+#pictures {
+
+    position:relative;
+    float: left;
 
 }

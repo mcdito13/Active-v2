@@ -5,61 +5,58 @@ include navbar
 
     .col-md-6.m-b-md
         .list-group
-            h4.list-group-header
+            h3.list-group-header
                 | Recent Activity
+                a.btn.btn-success-outline.pull-right(id='addActivityButton', data-toggle='modal', data-target='#addActivityModal') Add
 
             - var prettyDate = function(dateObject) {
             -   var m = dateObject.getMonth() + 1; // bc js is weird
             -   var d = dateObject.getDate();
             -   var y = dateObject.getFullYear();
-            -   return m + '/' + d + '/' + y;xs
+            -   return m + '/' + d + '/' + y;
             - }
 
-            for val in user_activity_result
-                a.list-group-item(id='user_table_data')= val.name
+            .list-group
+                for val in user_activity_result
                     - var goodD = prettyDate(val.date_done);
-                    - var activityLogToDelete = val.id;
-                    #editDeleteContainer.pull-right
-                        #goodD #{goodD}
-                            button.btn.btn-primary-outline(class='editDeleteButtons', data-toggle='modal', data-target='#addActivityModal')
-                                span.icon.icon-pencil
-                            form(action='/activityLog/delete' method='get', id='deleteForm')
-                                for val in user_info_result
-                                    - var data = val.id;
-                                    input(type='hidden', name='userId', value=data)
-                                input(type='hidden', name='activityLogToDelete', value=activityLogToDelete)
-                                button.btn.btn-primary-outline(class='editDeleteButtons' type='submit')
-                                    span.icon.icon-erase
+                    - var activityLogId = val.id;
+                    - var name = val.name;
+                    - var details = val.details;
+                    - var nameAndDetails = name + "   --   " + details;
+                    .list-group-item(id='user_table_data')= nameAndDetails
+                        #editDeleteContainer.pull-right
+                            #goodD #{goodD}
+                                form(action='/activityLog/delete' method='get', id='deleteForm')
+                                    for val in user_info_result
+                                        - var data = val.id;
+                                        input(type='hidden', name='userId', value=data)
+                                    input(type='hidden', name='activityLogToDelete', value=activityLogId)
+                                    button.btn.btn-primary-outline(class='editDeleteButtons' type='submit')
+                                        span.icon.icon-erase
 
-
-
-
-        a.btn.btn-primary-outline(href='#') View All
-        a.btn.btn-success-outline(data-toggle='modal', data-target='#addActivityModal') Add
 
     .col-md-6.m-b-md
         .list-group
-            h4.list-group-header
+            h3.list-group-header
                 | Goals
+                a.btn.btn-success-outline.pull-right(data-toggle='modal', data-target='#addGoalModal') Add
             for val in goal_result
-                a.list-group-item(id='user_table_data')= val.a_name
-                    - var goal_name = val.name;
-                    - var goalToDelete = val.id;
+                - var goal_name = val.name;
+                - var act_name = val.a_name;
+                - var actNameAndGoalName = act_name + "  --  " + goal_name;
+                - var goalToDelete = val.id;
+                a.list-group-item(id='user_table_data')= actNameAndGoalName
                     #editDeleteContainer.pull-right
-                        #g_name #{goal_name}
-                            button.btn.btn-primary-outline(class='editDeleteButtons', data-toggle='modal', data-target='#addActivityModal')
-                                span.icon.icon-pencil
-                            form(action='/goals/delete' method='get', id='deleteForm')
-                                for val in user_info_result
-                                    - var data = val.id;
-                                    input(type='hidden', name='userId', value=data)
-                                input(type='hidden', name='goalToDelete', value=goalToDelete)
-                                button.btn.btn-primary-outline(class='editDeleteButtons' type='submit')
-                                    span.icon.icon-erase
+                        form(action='/goals/delete' method='get', id='deleteForm')
+                            for val in user_info_result
+                                - var data = val.id;
+                                input(type='hidden', name='userId', value=data)
+                            input(type='hidden', name='goalToDelete', value=goalToDelete)
+                            button.btn.btn-primary-outline(class='editDeleteButtons' type='submit')
+                                span.icon.icon-erase
 
 
-        a.btn.btn-primary-outline(href='#') View All
-        a.btn.btn-success-outline(data-toggle='modal', data-target='#addGoalModal') Add
+
 
 // Modal
 #addActivityModal.modal.fade(role='dialog')
@@ -70,10 +67,10 @@ include navbar
                 button.close(type='button', data-dismiss='modal') x
                 h4.modal-title Your activity details:
 
-            form(action='/activityLog/insert' method='get', id='activityForm')
+            form(action='/activityLog/insert' method='get', class='activityForm')
                 .modal-body
-                    .container(id='addActivityForm')
-                        h4(id='addActivityHelpMessage') Please only select one activity
+                    .container(class='activityForm')
+                        h4(class='activityHelpMessage') Please only select one activity
                             .form-group
                                 for val in user_info_result
                                     - var data = val.id;
@@ -95,10 +92,10 @@ include navbar
 
                             .form-group
                                 .input-group(class='addFormItem')
-                                    input.form-control(type='text', name='dateDone', id='dateDone', value='09/01/2017', data-provide='datepicker', style='width: 200px;')
+                                    input.form-control(type='text', name='dateDone', class='dateDone', value='09/01/2017', data-provide='datepicker', style='width: 200px;')
 
                             .form-group
-                                textarea.form-control(name='activityDetails', class='addFormItem', type='text', id='activityDetails', placeholder='Any important details you want to save?')
+                                textarea.form-control(name='activityDetails', class='addFormItem', type='text', class='activityDetails', placeholder='Any important details you want to save?')
 
                 .modal-footer
                     button.btn.btn-default(type='submit') Submit
@@ -143,4 +140,3 @@ include navbar
     // Include jQuery (required) and the JS
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
 script(src='/scripts/toolkit.min.js')
-script(src='/scripts/dropdown.js')
