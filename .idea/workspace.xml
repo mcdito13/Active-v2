@@ -2,21 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="325a4593-1def-4cd0-8ddd-c57fd5fd7d97" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Procfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/images/favicon.ico" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/activityLog_dal.js" afterPath="$PROJECT_DIR$/model/activityLog_dal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/goals_dal.js" afterPath="$PROJECT_DIR$/model/goals_dal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/user_dal.js" afterPath="$PROJECT_DIR$/model/user_dal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/activityLog.js" afterPath="$PROJECT_DIR$/routes/activityLog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/goals.js" afterPath="$PROJECT_DIR$/routes/goals.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/signup.js" afterPath="$PROJECT_DIR$/routes/signup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/signup.pug" afterPath="$PROJECT_DIR$/views/signup.pug" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -70,11 +57,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+            <state relative-caret-position="381">
+              <caret line="177" column="1" lean-forward="true" selection-start-line="177" selection-start-column="1" selection-end-line="177" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="413">
+              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,8 +145,6 @@
         <option value="$PROJECT_DIR$/views/about.pug" />
         <option value="$PROJECT_DIR$/model/activity_dal.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/model/user_dal.js" />
         <option value="$PROJECT_DIR$/views/signup.pug" />
         <option value="$PROJECT_DIR$/routes/users.js" />
@@ -149,6 +154,8 @@
         <option value="$PROJECT_DIR$/routes/goals.js" />
         <option value="$PROJECT_DIR$/routes/activityLog.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -166,7 +173,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="14" />
     <option name="y" value="25" />
-    <option name="width" value="1685" />
+    <option name="width" value="961" />
     <option name="height" value="1034" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -295,7 +302,7 @@
       <workItem from="1504231849761" duration="11345000" />
       <workItem from="1504302503568" duration="30000" />
       <workItem from="1504302690927" duration="44102000" />
-      <workItem from="1504581668677" duration="6508000" />
+      <workItem from="1504581668677" duration="6629000" />
     </task>
     <task id="LOCAL-00001" summary="ui redone, ready to test db">
       <created>1503897236639</created>
@@ -332,11 +339,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504559332745</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="sign up route fully implemented&#10;user insert: done&#10;about page: done&#10;last thing left: edit">
+      <created>1504588821795</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1504588821795</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145418000" />
+    <option name="totallyTimeSpent" value="145539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -348,9 +362,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="14" y="25" width="1685" height="1034" extended-state="0" />
+    <frame x="14" y="25" width="961" height="1034" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124399036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22021277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33816424" sideWeight="0.5048611" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -382,7 +397,8 @@
     <MESSAGE value="scripts working on all pages now after adding '/' at front" />
     <MESSAGE value="'test commit'" />
     <MESSAGE value="model - activityLog/goals insert &amp; delete working&#10;views - modals for adding activity/goals working&#10;routes - activityLog/goals - insert &amp; delete&#10;&#10;last stop, being able to edit and resubmit an activity &amp; goal!" />
-    <option name="LAST_COMMIT_MESSAGE" value="model - activityLog/goals insert &amp; delete working&#10;views - modals for adding activity/goals working&#10;routes - activityLog/goals - insert &amp; delete&#10;&#10;last stop, being able to edit and resubmit an activity &amp; goal!" />
+    <MESSAGE value="sign up route fully implemented&#10;user insert: done&#10;about page: done&#10;last thing left: edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="sign up route fully implemented&#10;user insert: done&#10;about page: done&#10;last thing left: edit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -591,14 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/user_dal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -619,14 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="3" lean-forward="true" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -697,8 +697,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="169" column="0" lean-forward="true" selection-start-line="169" selection-start-column="0" selection-end-line="169" selection-end-column="0" />
+        <state relative-caret-position="381">
+          <caret line="177" column="1" lean-forward="true" selection-start-line="177" selection-start-column="1" selection-end-line="177" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding />
         </state>
       </provider>
