@@ -53,14 +53,16 @@ router.get('/view', function(req, res) {
                 res.render('index', {unsuccessful: true});
             } else {
                 // they do exist, get their activities
-                activityLog_dal.getByEmail(req.query, function (err, user_activity_result) {
+                var json = JSON.stringify(user_info_result.rows);
+                var userJSONObject = JSON.parse(json);
+                activityLog_dal.getById(userJSONObject[0], function (err, user_activity_result) {
                     console.log("User activity:");
                     console.log(user_activity_result.rows);
                     if (err) {
                         res.send(err);
                     } else {
                         // now get their goals
-                        goals_dal.getByEmail(req.query, function (err, goal_result) {
+                        goals_dal.getById(userJSONObject[0], function (err, goal_result) {
                             console.log('User Goals:');
                             console.log(goal_result);
                             if (err) {
@@ -98,8 +100,5 @@ router.get('/view', function(req, res) {
         }
     });
 });
-
-
-
 
 module.exports = router;

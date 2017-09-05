@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 var activityLog_dal = require('../model/activityLog_dal');
 var goals_dal = require('../model/goals_dal');
 var user_dal = require('../model/user_dal');
@@ -33,14 +34,14 @@ router.get('/insert', function(req, res) {
                         res.render('index', {unsuccessful: true});
                     } else {
                         // they do exist, get their activities
-                        activityLog_dal.getByEmail(userJSONObject[0], function (err, user_activity_result) {
+                        activityLog_dal.getById(userJSONObject[0], function (err, user_activity_result) {
                             console.log("User activity:");
                             console.log(user_activity_result);
                             if (err) {
                                 res.send(err);
                             } else {
                                 // now get their goals
-                                goals_dal.getByEmail(userJSONObject[0], function (err, goal_result) {
+                                goals_dal.getById(userJSONObject[0], function (err, goal_result) {
                                     console.log('User Goals:');
                                     console.log(goal_result);
                                     if (err) {
@@ -110,14 +111,14 @@ router.get('/edit', function(req, res) {
                         res.render('index', {unsuccessful: true});
                     } else {
                         // they do exist, get their activities
-                        activityLog_dal.getByEmail(userJSONObject[0], function (err, user_activity_result) {
+                        activityLog_dal.getById(userJSONObject[0], function (err, user_activity_result) {
                             console.log("User activity:");
                             console.log(user_activity_result);
                             if (err) {
                                 res.send(err);
                             } else {
                                 // now get their goals
-                                goals_dal.getByEmail(userJSONObject[0], function (err, goal_result) {
+                                goals_dal.getById(userJSONObject[0], function (err, goal_result) {
                                     console.log('User Goals:');
                                     console.log(goal_result);
                                     if (err) {
@@ -188,14 +189,14 @@ router.get('/delete', function(req, res) {
                         res.render('index', {unsuccessful: true});
                     } else {
                         // they do exist, get their activities
-                        activityLog_dal.getByEmail(userJSONObject[0], function (err, user_activity_result) {
+                        activityLog_dal.getById(userJSONObject[0], function (err, user_activity_result) {
                             console.log("User activity:");
                             console.log(user_activity_result);
                             if (err) {
                                 res.send(err);
                             } else {
                                 // now get their goals
-                                goals_dal.getByEmail(userJSONObject[0], function (err, goal_result) {
+                                goals_dal.getById(userJSONObject[0], function (err, goal_result) {
                                     console.log('User Goals:');
                                     console.log(goal_result);
                                     if (err) {

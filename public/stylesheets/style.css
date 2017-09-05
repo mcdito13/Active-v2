@@ -84,13 +84,6 @@ button.navbar-toggle:hover {
 
 }
 
-
-a.btn {
-
-    margin-right: 5px;
-
-}
-
 .loginAlerts {
 
     text-align: center;
@@ -124,9 +117,9 @@ a.btn {
 
 }
 
-.addActivityButton {
+#addActivityButton {
 
-    margin-left: 5px !important;
+    left:10px !important;
 
 }
 

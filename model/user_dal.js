@@ -23,3 +23,12 @@ exports.getUserById = function(params, callback) {
         callback(err, result);
     });
 };
+
+exports.insert = function(params, callback) {
+    var query = "INSERT INTO user_table (first_name, last_name, email, password) VALUES ('"+params.firstName+"', '"+params.lastName+"', '"+params.email+"', crypt('"+params.password+"', gen_salt('bf', 8)));";
+    console.log(params);
+    console.log(query);
+    client.query(query, function(err, result) {
+        callback(err, result);
+    });
+};

@@ -5,8 +5,8 @@ var client = new pg.Client(DATABASE_URL);
 client.connect();
 pg.defaults.ssl = true;
 
-exports.getByEmail = function(params, callback) {
-    var query = "SELECT a.name, al.date_done, al.id, al.details FROM activity_log_table al JOIN activity_table a ON a.id = al.activity_id JOIN user_table u ON u.email = '"+params.email+"';";
+exports.getById = function(params, callback) {
+    var query = "SELECT a.name, al.date_done, al.id, al.details FROM activity_log_table al JOIN activity_table a ON a.id = al.activity_id WHERE al.user_id = '"+params.id+"';";
     console.log(query);
     client.query(query, function(err, result) {
         callback(err, result);
