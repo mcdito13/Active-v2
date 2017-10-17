@@ -12,6 +12,7 @@ router.get('/', function(req, res, next) {
     res.render('users', { name: 'Name' });
 });
  */
+
 // GET users listing.
 router.get('/', function(req, res) {
     console.log('user info: ');
