@@ -5,14 +5,6 @@ var goals_dal = require('../model/goals_dal');
 var user_dal = require('../model/user_dal');
 var activity_dal = require('../model/activity_dal');
 
-/*
-// GET users listing.
-
-router.get('/', function(req, res, next) {
-    res.render('users', { name: 'Name' });
-});
- */
-
 // GET users listing.
 router.get('/', function(req, res) {
     console.log('user info: ');
