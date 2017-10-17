@@ -1,0 +1,8 @@
+heroku login
+git add .
+git commit -m '...'
+git push heroku master
+git ls-files | grep node_modules
+git rm -r --cached node_modules
+heroku logs
+
